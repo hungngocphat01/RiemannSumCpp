@@ -1,14 +1,13 @@
-//
-//  FileRW.hpp
-//  ExpressionEvaluator
-//
-//  Created by Ngoc Phat on 7/5/20.
-//  Copyright © 2020 Ngoc Phat. All rights reserved.
-//
+#ifndef FileRW_h
+#define FileRW_h
 
-#ifndef FileRW_hpp
-#define FileRW_hpp
+#include <string>
+#include <exception>
+using std::string;
+using std::exception;
+using std::runtime_error;
 
-#include <stdio.h>
+string FileRead(const char* filename);
+void FileWrite(const char* filename, string content);
 
-#endif /* FileRW_hpp */
+#endif /* FileRW_h */

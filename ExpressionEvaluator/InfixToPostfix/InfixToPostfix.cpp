@@ -46,7 +46,8 @@ string infix_to_postfix(string i_expression) {
              */
             
             // The previous character
-            char prev_char = NULL;
+            // Init it with NULL
+            char prev_char = '\0';
             
             // If index > 0, get the previous char. If index == 0, there is no previous char
             if (index > 0)

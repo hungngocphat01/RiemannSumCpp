@@ -2,6 +2,8 @@
 #define Utils_h
 
 #include <string>
+using std::string;
+using std::to_string;
 
 // This file contains several shared functions used in PostfixEval and InfixToPostfix
 // Because these functions are shared amongs different files (included twice), they have to be 'inline'.
@@ -41,8 +43,8 @@ inline unsigned priority(char c) {
     err_char: the character caused the error
     addt: Additional info (optional)
  */
-inline std::string error_string_gen(std::string err_noti, unsigned position, char err_char, std::string addt = "") {
-    return err_noti + std::to_string(position) + ": '" + err_char + "'. " + addt;
+inline string error_string_gen(string err_noti, unsigned position, char err_char, string addt = "") {
+    return err_noti + to_string(position) + ": '" + err_char + "'. " + addt;
 }
 // Example: Syntax error at 3: 'a'. Invalid operand.
 

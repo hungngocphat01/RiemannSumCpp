@@ -7,5 +7,5 @@ folders := InfixToPostfix PostfixEval StackFloat StackChar Utils
 CPP_SOURCES := $(foreach folder, $(folders), $(wildcard $(folder)/*.cpp))
 
 main: $(CPP_SOURCES) 
-	g++ $^ -o $@ -Wc++11-extensions
+	g++ -std=c++11 $^ -o $@ 
 	

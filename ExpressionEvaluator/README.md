@@ -6,8 +6,14 @@
 * Class: 19CTT4
 
 ## Input/output
-* input.txt: contains an infix expression as a string.
-* output.txt: contains a float which is evaluated from the given expression if there is no syntax error. Else, contains a string that describe the error while parsing/evaluating the given expression.
+* Parameters:
+* No parameter: read and evaluate an INFIX expression in "input.txt".
+* -i: evaluate a infix expression.
+* -s or -p: evaluate a suffix/postfix expression
+* -f: read from file. Must specify -i/-s/-p.
+
+* input.txt: contains an expression of string type.
+* output.txt: contains the result. Additionally includes suffix expression if converted from infix expression.
 
 ## Source code structure
 * **main.cpp**: contains the main function.
@@ -16,5 +22,7 @@
 * **StackChar**: contains definitions and methods for a stack of char type, which lies underneath InfixToPostfix.
 * **StackFloat**: contains definitions and methods for a stack of float type, which lies underneath PostfixEval.
 * **Utils**: contains inline functions that are shared between InfixToPosfix and PostfixEval.
+* **FileRW**: contains functions to read and write to file
+* **makefile**: make rule for GNU make. Pass 'win' to compile for Windows (default). Pass 'unix' to compile for a Unix-like OS. Resulting binary only differs in filename (Windows has a '.exe' extension, whereas Unix-like OS doesn't).
 
 

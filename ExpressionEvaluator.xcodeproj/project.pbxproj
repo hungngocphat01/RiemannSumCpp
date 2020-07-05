@@ -12,6 +12,8 @@
 		9209D19E24AE17C600F0A370 /* StackFloat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9209D19D24AE17C600F0A370 /* StackFloat.cpp */; };
 		926B41A424A35D1F00E1ECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926B41A324A35D1F00E1ECB1 /* main.cpp */; };
 		92D39C9524A4A34800B2F99C /* InfixToPostfix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D39C9324A4A34800B2F99C /* InfixToPostfix.cpp */; };
+		92D603A124B1F397008FDB72 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 92D603A024B1F397008FDB72 /* makefile */; };
+		92D603A524B1F9C9008FDB72 /* FileRW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D603A324B1F9C9008FDB72 /* FileRW.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +51,9 @@
 		92D39C9324A4A34800B2F99C /* InfixToPostfix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InfixToPostfix.cpp; sourceTree = "<group>"; };
 		92D39C9424A4A34800B2F99C /* InfixToPostfix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfixToPostfix.h; sourceTree = "<group>"; };
 		92D39C9624A4B73F00B2F99C /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		92D603A024B1F397008FDB72 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		92D603A324B1F9C9008FDB72 /* FileRW.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileRW.cpp; sourceTree = "<group>"; };
+		92D603A424B1F9C9008FDB72 /* FileRW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileRW.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +144,20 @@
 				9208E91424AF787C002A8B19 /* StackFloat */,
 				9208E91624AF7890002A8B19 /* StackChar */,
 				9208E91724AF78B0002A8B19 /* Utils */,
+				92D603A224B1F9AB008FDB72 /* FileRW */,
 				9209D19F24AE18EB00F0A370 /* README.md */,
+				92D603A024B1F397008FDB72 /* makefile */,
 			);
 			path = ExpressionEvaluator;
+			sourceTree = "<group>";
+		};
+		92D603A224B1F9AB008FDB72 /* FileRW */ = {
+			isa = PBXGroup;
+			children = (
+				92D603A324B1F9C9008FDB72 /* FileRW.cpp */,
+				92D603A424B1F9C9008FDB72 /* FileRW.h */,
+			);
+			path = FileRW;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D39C9524A4A34800B2F99C /* InfixToPostfix.cpp in Sources */,
+				92D603A124B1F397008FDB72 /* makefile in Sources */,
+				92D603A524B1F9C9008FDB72 /* FileRW.cpp in Sources */,
 				926B41A424A35D1F00E1ECB1 /* main.cpp in Sources */,
 				9209D19E24AE17C600F0A370 /* StackFloat.cpp in Sources */,
 				9209D19B24AE157F00F0A370 /* StackChar.cpp in Sources */,
