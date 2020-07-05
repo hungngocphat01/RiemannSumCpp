@@ -1,8 +1,8 @@
 #ifndef PostfixEval_h
 #define PostfixEval_h
 
-#include "StackFloat.h"
-#include "Utils.h"
+#include "../StackFloat/StackFloat.h"
+#include "../Utils/Utils.h"
 #include <string>
 #include <cmath>
 

@@ -1,5 +1,4 @@
 #include "InfixToPostfix.h"
-#include "Utils.h"
 
 /*
  Convert an infix expression to a postfix expression

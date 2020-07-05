@@ -2,7 +2,8 @@
 #define InfixToPostfix_h
 
 #include <string>
-#include "StackChar.h"
+#include "../StackChar/StackChar.h"
+#include "../Utils/Utils.h"
 
 string infix_to_postfix(string i_expression);
 

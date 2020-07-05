@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    string infix = "";
+    string infix = "3+3^2*10";
     string suffix;
     try {
         suffix = infix_to_postfix(infix);

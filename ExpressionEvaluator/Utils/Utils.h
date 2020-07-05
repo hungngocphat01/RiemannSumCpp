@@ -36,14 +36,14 @@ inline unsigned priority(char c) {
 }
 
 /* Generate an syntax error description
-    err_type: type of the error
+    err_noti: error notification string/type of the error.
     position: where the error occured
     err_char: the character caused the error
     addt: Additional info (optional)
  */
-inline std::string error_string_gen(std::string err_type, unsigned position, char err_char, std::string addt = "") {
-    std::string err;
-    return err_type + std::to_string(position) + ": '" + err_char + "'. " + addt;
+inline std::string error_string_gen(std::string err_noti, unsigned position, char err_char, std::string addt = "") {
+    return err_noti + std::to_string(position) + ": '" + err_char + "'. " + addt;
 }
+// Example: Syntax error at 3: 'a'. Invalid operand.
 
 #endif /* Utils_h */
