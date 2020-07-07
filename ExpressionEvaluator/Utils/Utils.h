@@ -39,13 +39,21 @@ inline unsigned priority(char c) {
 
 /* Generate an syntax error description
     err_noti: error notification string/type of the error.
-    position: where the error occured
+    position: where the error occured. Hide the position when -1 is passed.
     err_char: the character caused the error
     addt: Additional info (optional)
+ 
+    Example: Syntax error at 3: 'a'. Invalid operand.
  */
-inline string error_string_gen(string err_noti, unsigned position, char err_char, string addt = "") {
-    return err_noti + to_string(position) + ": '" + err_char + "'. " + addt;
+inline string error_string_gen(string err_noti, int position, char err_char, string addt = "") {
+    string e_str;
+    e_str += err_noti;
+    if (position >= 0) e_str += to_string(position);
+    e_str += ": '";
+    e_str += err_char;
+    e_str += "'. ";
+    e_str += addt;
+    return e_str;
 }
-// Example: Syntax error at 3: 'a'. Invalid operand.
 
 #endif /* Utils_h */

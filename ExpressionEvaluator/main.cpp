@@ -10,11 +10,10 @@ enum ENUM_MODES {M_FILE, M_INFIX, M_POSTFIX};
 bool* parameter_processor(int argc, char** argv);
 
 int main(int argc, char** argv) {
+    // The infix/postfix expression, which will be read
+    string infix;
+    string postfix;
     try {
-        // The infix/postfix expression, which will be read
-        string infix;
-        string postfix;
-        
         // Working modes flag
         bool* mode = nullptr;
         mode = parameter_processor(argc, argv);
@@ -66,10 +65,17 @@ int main(int argc, char** argv) {
     }
     catch (exception& e) {
         cout << e.what() << endl;
-        FileWrite("errorlog.txt", e.what());
+        string log_buffer;
+        log_buffer += string("Infix expression: ") + infix;
+        log_buffer += string("\nPostfix expression: ") + postfix;
+        log_buffer += string("\nParameters: ");
+        for (unsigned i = 1; i < argc; i++) {
+            log_buffer += string(argv[i]) + ", ";
+        }
+        log_buffer += string("\nError: ") + e.what();
+        
+        FileWrite("errorlog.txt", log_buffer);
     }
-    
-    
     return 0;
 }
 
@@ -95,7 +101,7 @@ bool* parameter_processor(int argc, char** argv) {
             throw runtime_error("Parameter error: -p/-s and -i cannot be used at the same time.");
         }
         
-        if (mode[M_FILE] && (!mode[M_INFIX] || !mode[M_POSTFIX])) {
+        if (mode[M_FILE] && !mode[M_INFIX] && !mode[M_POSTFIX]) {
             throw runtime_error("Parameter error: expression type not specified.");
         }
     }

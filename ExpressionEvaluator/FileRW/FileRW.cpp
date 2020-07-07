@@ -9,15 +9,17 @@ string FileRead(const char* r_filename) {
     fp = fopen(r_filename, "rt");
     
     if (fp == nullptr) {
+        fclose(fp);
         throw runtime_error("Error reading file: input file does not exist.");
     }
     
     // The pointer holding the address of the read buffer for later check
     char* read_chars = fgets(buffer, 199, fp);
+    // Close the file as we don't need it anymore
+    fclose(fp);
     
     // If error occurred while reading
     if (read_chars == nullptr) {
-        fclose(fp);
         throw runtime_error("Error reading file: file opened but was not properly read.");
     }
     
@@ -32,7 +34,7 @@ string FileRead(const char* r_filename) {
     // Convert char* to string and free the dynamic char array
     string content_str = string(read_chars);
     delete[] buffer;
-    
+
     return content_str;
 }
 

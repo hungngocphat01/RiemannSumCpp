@@ -2,6 +2,8 @@
 #define InfixToPostfix_h
 
 #include <string>
+#include <cstring>
+#include <exception>
 #include "../StackChar/StackChar.h"
 #include "../Utils/Utils.h"
 

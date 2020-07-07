@@ -14,11 +14,13 @@ string infix_to_postfix(string i_expression) {
     unsigned index = 0;
     char c = 0;
     
+    char last_char = '\0';  // Last non-space char that was scanned. Used for syntax tracking.
+    
     /*
      Overall algorithm
      
      Source: based on https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/
-     Addition of support for float number, negative number and error handling by me.
+     Addition of support for float numbers, negative numbers and error handling/syntax tracker by me.
      
      - Loop through the infix expression.
      - If the character is a digit or a decimal point '.', add it to the postfix expr.
@@ -30,7 +32,7 @@ string infix_to_postfix(string i_expression) {
      - Else, raise syntax error.
      - Finally, when the end of the infix expression is reached, pop all elements from the stack and add them to the postfix expr.
      */
-    
+        
     // Loop through the infix expression.
     for (index = 0; index < i_expression.size(); index++) {
         // Abbreviate i_expression[index] to c
@@ -53,10 +55,14 @@ string infix_to_postfix(string i_expression) {
             if (index > 0)
                 prev_char = i_expression[index - 1];
             
-            if (index != 0 && !isdigit(prev_char) && prev_char != '.' && prev_char != '-')
+            // If previous char is not a digit, a dot or a '-', add a space.
+            if (index != 0 && !isdigit(prev_char) && prev_char != '.')
                 result_expr += ' ';
             
+            // Finally append the digit/dot
             result_expr += c;
+            
+            last_char = c;
         }
         
         // Ignore the space
@@ -72,10 +78,19 @@ string infix_to_postfix(string i_expression) {
         
         // If the char is an operator
         else if (isoperator(c)) {
-            // If the operator is a '-', and it is followed by a digit, then append it into the result expression to form a negative number.
-            if (c == '-' && isdigit(i_expression[index + 1])) {
+            // Negative number handling: if the operator is a '-', and it is followed immediately by a digit, and the previous char must not be a number (if so, it is a minus sign, not a negative sign), then append it into the result expression to form a negative number. Skip processing the '-' and go on to the next char.
+            if (c == '-' && isdigit(i_expression[index + 1]) && !isdigit(last_char)) {
+                result_expr += ' ';
                 result_expr += c;
+                last_char = '\0'; // "Yeah I'm not an operator" - negative sign says.
                 continue;
+            }
+            
+            // Syntax tracker: before an operator must be a digit.
+            if (!isdigit(last_char)) {
+                string e_str = error_string_gen("Conversion syntax error: non-operand unexpected before position", index, last_char);
+                stackFree(&stack);
+                throw runtime_error(e_str);
             }
             
             // Common steps for other cases
@@ -91,6 +106,7 @@ string infix_to_postfix(string i_expression) {
                 }
                 stackPush(stack, c);
             }
+            last_char = c;
         }
         
         // If a closing parenthesis is encountered
@@ -106,7 +122,8 @@ string infix_to_postfix(string i_expression) {
             // While popping, if the stack is empty, raise syntax error
             catch (exception& e) {
                 if (strcmp(e.what(), ERR_EMPTY_STACK) == 0) {
-                    string e_str = string("Syntax error: no matching opening parenthesis with closing at ") + to_string(index);
+                    string e_str = error_string_gen("Conversion syntax error: no matching opening parenthesis with closing at ", index, i_expression[index]);
+                    stackFree(&stack);
                     throw runtime_error(e_str);
                 }
             }
@@ -114,7 +131,8 @@ string infix_to_postfix(string i_expression) {
         
         // Else, raise syntax error
         else {
-            string e_str = string("Syntax error: Invalid character at ") + to_string(index);
+            string e_str = error_string_gen("Conversion syntax error: Invalid character at ", index, i_expression[index]);
+            stackFree(&stack);
             throw runtime_error(e_str);
         }
     }

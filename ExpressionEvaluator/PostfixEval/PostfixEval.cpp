@@ -23,15 +23,15 @@ float postfix_eval(string p_expression) {
     
     // If init fails, return false
     if(!stackInit(&stack)) {
-        throw "[Postfix] Stack allocation failed.";
+        throw runtime_error("[Postfix] Stack allocation failed.");
     }
     
     string proc_operand = ""; // The operand that is being processed
     
     /* Overall algorithm:
      
-     Based on lecture 'Hàng đợi' on 24/7/2020 by Lecturer N.T.Việt, fit@HCMUS
-     Addition of support for float number and error handling by me.
+     Based on lecture 'Hàng đợi' on 24/6/2020 by Lecturer N.T.Việt, fit@HCMUS.
+     Addition of support for float number, negative number and error handling/syntax tracker by me.
      
      - Iterate through the expression string.
      - If the char is a digit or a decimal point '.' (operand), add it into the proc_operand string.
@@ -63,7 +63,7 @@ float postfix_eval(string p_expression) {
             }
             // If c is an operator
             else if (isoperator(c)) {
-                // If the operator is a '-', and it is followed by a digit, then append it into the proc_operand.
+                // If the operator is a '-', and it is followed by a digit, then append it into the proc_operand. Skip processing the '-' and go on to the next char.
                 if (c == '-' && isdigit(p_expression[index + 1])) {
                     proc_operand += c;
                     continue;
@@ -73,6 +73,7 @@ float postfix_eval(string p_expression) {
                 if (proc_operand != "") {
                     string err = error_string_gen(INVALID_OPERATOR, index, p_expression[index], "May be a space is missing.");
                     // string err = string("Syntax error: Invalid operator: '") + c + string("' at ") + to_string(index) + string(". May be a space is missing.");
+                    stackFree(&stack);
                     throw runtime_error(err);
                     // For example: Syntax error: Invalid operator: '+' at xxx ....
                     break;
@@ -113,7 +114,7 @@ float postfix_eval(string p_expression) {
             // Other syntax errors
             else {
                 string err = error_string_gen(INVALID_OPERAND, index, p_expression[index]);
-                // string err = string("Syntax error: Invalid operand: '") + c + string("' at ") + to_string(index);
+                stackFree(&stack);
                 throw runtime_error(err);
             }
         }
@@ -123,13 +124,13 @@ float postfix_eval(string p_expression) {
         // For example: 5 + +
         if (strcmp(e.what(), ERR_EMPTY_STACK) == 0) {
             string err = error_string_gen(INVALID_OPERATOR, index, p_expression[index], "May be an operand is missing.");
-            //string err = string("Syntax error: Invalid operator: '") + c + string("' at ") + to_string(index) \
-                         + string(". May be an operand is missing.");
+            stackFree(&stack);
             throw runtime_error(err);
         }
         
         // If other exception (like null stack)
         string err = error_string_gen(OTHER_EXCEPTION, index, p_expression[index], e.what());
+        stackFree(&stack);
         throw runtime_error(err);
     }
     

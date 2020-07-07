@@ -1,11 +1,19 @@
 # Makefile for ExpressionEvaluator by Hung Ngoc Phat (19120615)
 
+ifeq ($(OS), Windows_NT)
+	EXECUTABLE := eval.exe
+else
+	EXECUTABLE := eval
+endif
+
+G++ := g++-9
+
 # Subfolders
-folders := InfixToPostfix PostfixEval StackFloat StackChar Utils
+folders := InfixToPostfix PostfixEval StackFloat StackChar Utils FileRW
 
 # Dependencies
-CPP_SOURCES := $(foreach folder, $(folders), $(wildcard $(folder)/*.cpp))
+CPP_DEPENDENCIES := $(foreach folder, $(folders), $(wildcard $(folder)/*.cpp))
 
-main: $(CPP_SOURCES) 
-	g++ -std=c++11 $^ -o $@ 
+BUILD/$(EXECUTABLE): $(CPP_DEPENDENCIES) main.cpp 
+	$(G++) -std=c++11 $^ -o $@ 
 	
