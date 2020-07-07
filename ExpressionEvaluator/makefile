@@ -6,7 +6,7 @@ else
 	EXECUTABLE := ExprEval
 endif
 
-G++ := g++-9
+G++ := g++
 
 # Subfolders
 folders := InfixToPostfix PostfixEval StackFloat StackChar Utils FileRW

@@ -46,11 +46,11 @@
 * ``makefile``: make rule for GNU make. Built binary will be placed in BUILD folder.\n **Warning**: a suitable g++ executable path ``$(G++)`` must be re-specified in ``makefile``.
 
 ## Building
-* This repository can be built by using GNU make in the same folder with ```makefile```.
+* This repository can be built by running GNU make in the same folder with ```makefile```.
     ```bash
     $ make
     ```
-* Be sure to set the ``g++`` path (``$(G++)``) correctly in ``makefile``. Default is ``g++-9``.
+* Be sure to set the ``g++`` path (``$(G++)``) correctly in ``makefile``. Default is ``g++``.
     * On Windows, install ``mingw-64`` and add it to ``PATH``, then set ``$(G++) := g++``.
-    * On Linux, such as Ubuntu, install ``build-essential`` from ``apt``, then set ``$(G++) := g++``.
-    * On macOS, install ``gcc`` from Homebrew, then set ``$(G++)`` accordingly to your installed gcc version. For example, ``g++-9``.
+    * On Linux, such as Debian-based distros, install ``build-essential`` from ``apt``, then set ``$(G++) := g++``.
+    * On macOS, install ``gcc`` from Homebrew, then set ``$(G++)`` accordingly to your installed gcc version. For example, ``g++-9``. You can also use ``clang++`` without having to install ``g++``. Simply set ``$(G++) := clang++``

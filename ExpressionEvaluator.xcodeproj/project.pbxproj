@@ -51,7 +51,6 @@
 		9209D19A24AE157F00F0A370 /* StackChar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StackChar.cpp; sourceTree = "<group>"; };
 		9209D19C24AE17C600F0A370 /* StackChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackChar.h; sourceTree = "<group>"; };
 		9209D19D24AE17C600F0A370 /* StackFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StackFloat.cpp; sourceTree = "<group>"; };
-		9209D19F24AE18EB00F0A370 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		926B41A024A35D1F00E1ECB1 /* ExpressionEvaluator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExpressionEvaluator; sourceTree = BUILT_PRODUCTS_DIR; };
 		926B41A324A35D1F00E1ECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		926B41AB24A35D5600E1ECB1 /* StackFloat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackFloat.h; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 		926B41A224A35D1F00E1ECB1 /* ExpressionEvaluator */ = {
 			isa = PBXGroup;
 			children = (
-				9209D19F24AE18EB00F0A370 /* README.md */,
 				926B41A324A35D1F00E1ECB1 /* main.cpp */,
 				9208E91224AF785E002A8B19 /* InfixToPostfix */,
 				9208E91324AF786B002A8B19 /* PostfixEval */,
