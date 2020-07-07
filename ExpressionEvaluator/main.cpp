@@ -86,7 +86,13 @@ int main(int argc, char** argv) {
 
 // Function to set mode flags. Receives argc, argv from main function
 bool* parameter_processor(int argc, char** argv) {
-    bool* mode = new bool[3] {false, false, false};
+    bool* mode = nullptr;
+    try {
+        mode = new bool[3] {false, false, false};
+    }
+    catch (exception& e) {
+        throw runtime_error("Error: Not sufficient memory for processing commandline parameters.");
+    }
     
     // Commandline parameters. See README.md for more information.
     if (argc > 1) {

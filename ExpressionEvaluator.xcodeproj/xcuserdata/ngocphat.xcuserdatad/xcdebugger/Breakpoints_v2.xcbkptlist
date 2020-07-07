@@ -149,22 +149,5 @@
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DDAD7890-9FF6-453D-AAB6-6AF001ACAF3D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            condition = "index==2"
-            continueAfterRunningActions = "No"
-            filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "infix_to_postfix(i_expression)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
