@@ -45,6 +45,10 @@ int main(int argc, char** argv) {
                    infix = string(argv[2]);
                }
            }
+           // Only 1 argument is specified
+           else if (argc == 2) {
+               infix = string(argv[1]);
+           }
            // Default/no argument
            else {
                infix = FileRead("input.txt");

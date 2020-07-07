@@ -1,9 +1,9 @@
 # Makefile for ExpressionEvaluator by Hung Ngoc Phat (19120615)
 
 ifeq ($(OS), Windows_NT)
-	EXECUTABLE := eval.exe
+	EXECUTABLE := ExprEval.exe
 else
-	EXECUTABLE := eval
+	EXECUTABLE := ExprEval
 endif
 
 G++ := g++-9
