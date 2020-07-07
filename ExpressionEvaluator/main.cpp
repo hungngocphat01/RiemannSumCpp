@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
     string infix;
     string postfix;
     try {
-        // Working modes flag
+        // Working mode flags
         bool* mode = nullptr;
         mode = parameter_processor(argc, argv);
         
@@ -52,10 +52,10 @@ int main(int argc, char** argv) {
            
            // Convert to postfix
            postfix = infix_to_postfix(infix);
+           cout << "Suffix expression: " << postfix << endl;
+           
            // Result
            float result = postfix_eval(postfix);
-           
-           cout << "Suffix expression: " << postfix << endl;
            cout << "Result: " << result << endl;
            
            FileWrite("output.txt", postfix);
@@ -75,11 +75,12 @@ int main(int argc, char** argv) {
         log_buffer += string("\nError: ") + e.what();
         
         FileWrite("errorlog.txt", log_buffer);
+        return -1;
     }
     return 0;
 }
 
-// Function to set flag mode. Receives argc, argv from main function
+// Function to set mode flags. Receives argc, argv from main function
 bool* parameter_processor(int argc, char** argv) {
     bool* mode = new bool[3] {false, false, false};
     

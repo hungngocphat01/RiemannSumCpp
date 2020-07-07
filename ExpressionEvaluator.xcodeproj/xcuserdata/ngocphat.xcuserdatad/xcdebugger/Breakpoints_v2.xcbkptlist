@@ -72,38 +72,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "246D70EB-ECC8-4E0C-8A50-7713359EC331"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "8"
-            endingLineNumber = "8"
-            landmarkName = "infix_to_postfix(i_expression)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FE901229-1CA9-4B1B-B21E-CE8659C9BAAD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "infix_to_postfix(i_expression)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A944E27B-0ABF-4630-B0D7-5414B3CD7C0C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -111,8 +79,8 @@
             filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "infix_to_postfix(i_expression)"
             landmarkType = "9">
          </BreakpointContent>
@@ -127,8 +95,73 @@
             filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "infix_to_postfix(i_expression)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32E3AC0F-0E4B-4A4D-B447-6B32032C9F2C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "infix_to_postfix(i_expression)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA10C499-EC0B-445D-82AC-755C258DF4B7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "infix_to_postfix(i_expression)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CB9289FE-A09D-4452-8163-3D67237A4364"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "infix_to_postfix(i_expression)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDAD7890-9FF6-453D-AAB6-6AF001ACAF3D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            condition = "index==2"
+            continueAfterRunningActions = "No"
+            filePath = "ExpressionEvaluator/InfixToPostfix/InfixToPostfix.cpp"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "infix_to_postfix(i_expression)"
             landmarkType = "9">
          </BreakpointContent>

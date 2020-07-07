@@ -17,8 +17,8 @@
 
 ## Source code structure
 * ``main.cpp``: contains the main function and the parameter handling function.
-* ``InfixToPostfix``: defines the function to convert an infix expression (of string type) to a postfix expression (of string type).
 * ``PostfixEval``: contains the function to evaluate a postfix expression (of string type). Returns a float if evaluated successfully. Else, throws a runtime_error.
+* ``InfixToPostfix``: defines the function to convert an infix expression (of string type) to a postfix expression (of string type). Note that more syntax error checking are done in this file than in ``PostfixEval`` because this is what an actual human uses in practice, not the computer-ish postfix expression.
 * ``StackChar``: contains definitions and methods for a stack of ``char`` type, which lies underneath InfixToPostfix.
 * ``StackFloat``: contains definitions and methods for a stack of ``float`` type, which lies underneath PostfixEval.
 * ``Utils``: contains inline functions that are shared between ``InfixToPosfix`` and ``PostfixEval``.

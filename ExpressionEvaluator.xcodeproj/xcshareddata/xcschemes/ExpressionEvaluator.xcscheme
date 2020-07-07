@@ -53,6 +53,10 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "-i &quot;3+3*(2-5.3^(-2))+9.75^(-1)&quot;"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-i &quot;1+1&quot;"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

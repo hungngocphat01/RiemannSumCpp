@@ -1,11 +1,41 @@
 #include "InfixToPostfix.h"
 
+// Strip spaces from a string
+void stripSpaces(string& s) {
+    for (unsigned i = 0; i < s.size(); i++) {
+        while (s.at(i) ==  ' ') {
+            s.erase(i);
+        }
+    }
+}
+
+// Get the previous character at a given position
+char getPrevChar(string s, int index) {
+    // If first or out of bound index, there is no previous char.
+    if (index <= 0) {
+        return '\0';
+    }
+    return s.at(index - 1);
+}
+
+// Get the next character at a given position
+char getNextChar(string s, int index) {
+    // If last or out of bound index, there is no next char.
+    if (index >= s.size() - 1) {
+        return '\0';
+    }
+    return s.at(index + 1);
+}
+
 /*
  Convert an infix expression to a postfix expression
  */
 string infix_to_postfix(string i_expression) {
-    StackChar *stack = new StackChar;
+    // Strip spaces from the string
+    stripSpaces(i_expression);
     
+    // Init a char stack
+    StackChar *stack = new StackChar;
     if (!stackInit(&stack)) {
         throw runtime_error("[Infix to Postfix] Stack init failed.");
     }
@@ -13,9 +43,7 @@ string infix_to_postfix(string i_expression) {
     string result_expr; // Postfix Expression (final result)
     unsigned index = 0;
     char c = 0;
-    
-    char last_char = '\0';  // Last non-space char that was scanned. Used for syntax tracking.
-    
+        
     /*
      Overall algorithm
      
@@ -44,25 +72,44 @@ string infix_to_postfix(string i_expression) {
                Except when:
                     + The digit is at the beginning of the expression
                       (if we skip this, there will be a space at the beginning of the resulting postfix expression.
-                   +  Before the digit was another digit or '.' or '-' (if we skip this, '1.25' will become '1 . 2 5').
+                   +  Before the digit was another digit or '.' or the processing number is negative (if we skip this, '1.25' will become '1 . 2 5', '-5' will become '- 5').
              */
             
-            // The previous character
-            // Init it with NULL
-            char prev_char = '\0';
+            // The previous and the next character
+            char prev_char = getPrevChar(i_expression, index);
+            char next_char = getNextChar(i_expression, index);
             
-            // If index > 0, get the previous char. If index == 0, there is no previous char
-            if (index > 0)
-                prev_char = i_expression[index - 1];
+            // Syntax tracking: before and after a '.' must be a number
+            if (c == '.' && !isdigit(prev_char)) {
+                string e_str = error_string_gen("Syntax error: Unexpected non-digit before '.' at", index - 1, prev_char);
+                stackFree(&stack);
+                throw runtime_error(e_str);
+            }
+            else if (c == '.' && !isdigit(next_char)) {
+                string e_str = error_string_gen("Syntax error: Unexpected non-digit after '.' at ", index + 1, next_char);
+                stackFree(&stack);
+                throw runtime_error(e_str);
+            }
             
-            // If previous char is not a digit, a dot or a '-', add a space.
-            if (index != 0 && !isdigit(prev_char) && prev_char != '.')
+            // Check if the current number is negative or not
+            char prev_prev_char = getPrevChar(i_expression, index - 1);
+            bool isNegative = (prev_char == '-' && !isdigit(prev_prev_char) && prev_prev_char != ')');
+            /* If a number is negative, the char before it must be a '-', and the char before the '-' must not be a digit or a ')'
+             Example:
+             2-5 => 5 is not negative
+             -5 => -5 is negative. prev_prev_char is '\0', so it is not a number.
+             (-5 => -5 is negative. prev_prev_char is '\0', so it is not a number.
+             (2+4)-5 => 5 is not negative because prev_prev_char is ')'.
+             2*-5 => -5 is negative
+             ....
+            */
+            
+            // If previous char is not a digit, a dot and the current char is not negative
+            if (index != 0 && !isdigit(prev_char) && prev_char != '.' && !isNegative)
                 result_expr += ' ';
             
             // Finally append the digit/dot
             result_expr += c;
-            
-            last_char = c;
         }
         
         // Ignore the space
@@ -78,17 +125,18 @@ string infix_to_postfix(string i_expression) {
         
         // If the char is an operator
         else if (isoperator(c)) {
+            char prev_char = getPrevChar(i_expression, index);
+            
             // Negative number handling: if the operator is a '-', and it is followed immediately by a digit, and the previous char must not be a number (if so, it is a minus sign, not a negative sign), then append it into the result expression to form a negative number. Skip processing the '-' and go on to the next char.
-            if (c == '-' && isdigit(i_expression[index + 1]) && !isdigit(last_char)) {
+            if (c == '-' && isdigit(i_expression[index + 1]) && !isdigit(prev_char)) {
                 result_expr += ' ';
                 result_expr += c;
-                last_char = '\0'; // "Yeah I'm not an operator" - negative sign says.
                 continue;
             }
             
-            // Syntax tracker: before an operator must be a digit.
-            if (!isdigit(last_char)) {
-                string e_str = error_string_gen("Conversion syntax error: non-operand unexpected before position", index, last_char);
+            // Syntax tracker: before an operator must be a digit or a ')'.
+            if (!isdigit(prev_char) && prev_char != ')') {
+                string e_str = error_string_gen("Conversion syntax error: unexpected non-operand before an operator at ", index, prev_char);
                 stackFree(&stack);
                 throw runtime_error(e_str);
             }
@@ -106,7 +154,6 @@ string infix_to_postfix(string i_expression) {
                 }
                 stackPush(stack, c);
             }
-            last_char = c;
         }
         
         // If a closing parenthesis is encountered
