@@ -4,7 +4,7 @@
 void stripSpaces(string& s) {
     for (unsigned i = 0; i < s.size(); i++) {
         while (s.at(i) ==  ' ') {
-            s.erase(i);
+            s.erase(i, 1);
         }
     }
 }
