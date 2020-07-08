@@ -1,4 +1,0 @@
-Infix expression: 1+a
-Postfix expression: 
-Parameters: 1+a, 
-Error: Conversion syntax error: Invalid character at 2: 'a'. 
