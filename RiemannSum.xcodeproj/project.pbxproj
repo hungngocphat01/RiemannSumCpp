@@ -13,7 +13,6 @@
 		926B41A424A35D1F00E1ECB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 926B41A324A35D1F00E1ECB1 /* main.cpp */; };
 		92D39C9524A4A34800B2F99C /* InfixToPostfix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D39C9324A4A34800B2F99C /* InfixToPostfix.cpp */; };
 		92D603A124B1F397008FDB72 /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = 92D603A024B1F397008FDB72 /* makefile */; };
-		92D603A524B1F9C9008FDB72 /* FileRW.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92D603A324B1F9C9008FDB72 /* FileRW.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,17 +50,18 @@
 		9209D19A24AE157F00F0A370 /* StackChar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = StackChar.cpp; sourceTree = "<group>"; };
 		9209D19C24AE17C600F0A370 /* StackChar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StackChar.h; sourceTree = "<group>"; };
 		9209D19D24AE17C600F0A370 /* StackFloat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StackFloat.cpp; sourceTree = "<group>"; };
-		926B41A024A35D1F00E1ECB1 /* ExpressionEvaluator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExpressionEvaluator; sourceTree = BUILT_PRODUCTS_DIR; };
+		9248C1F324C41D710099D68B /* SyntaxCheck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyntaxCheck.h; sourceTree = "<group>"; };
+		926B41A024A35D1F00E1ECB1 /* RiemannSum */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RiemannSum; sourceTree = BUILT_PRODUCTS_DIR; };
 		926B41A324A35D1F00E1ECB1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		926B41AB24A35D5600E1ECB1 /* StackFloat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StackFloat.h; sourceTree = "<group>"; };
 		926B41AE24A3669C00E1ECB1 /* PostfixEval.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostfixEval.h; sourceTree = "<group>"; };
+		929CDBA324BDB778003D7EED /* Riemann.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Riemann.h; sourceTree = "<group>"; };
+		929CDBA424BDB7C1003D7EED /* Substitution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Substitution.h; sourceTree = "<group>"; };
 		92D39C8C24A4A32F00B2F99C /* InfixToPostfix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = InfixToPostfix; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D39C9324A4A34800B2F99C /* InfixToPostfix.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InfixToPostfix.cpp; sourceTree = "<group>"; };
 		92D39C9424A4A34800B2F99C /* InfixToPostfix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfixToPostfix.h; sourceTree = "<group>"; };
 		92D39C9624A4B73F00B2F99C /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		92D603A024B1F397008FDB72 /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		92D603A324B1F9C9008FDB72 /* FileRW.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileRW.cpp; sourceTree = "<group>"; };
-		92D603A424B1F9C9008FDB72 /* FileRW.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileRW.h; sourceTree = "<group>"; };
 		92D603AA24B4905F008FDB72 /* FreeTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FreeTest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,7 +137,7 @@
 		926B419724A35D1F00E1ECB1 = {
 			isa = PBXGroup;
 			children = (
-				926B41A224A35D1F00E1ECB1 /* ExpressionEvaluator */,
+				926B41A224A35D1F00E1ECB1 /* RiemannSum */,
 				926B41A124A35D1F00E1ECB1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,14 +145,14 @@
 		926B41A124A35D1F00E1ECB1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				926B41A024A35D1F00E1ECB1 /* ExpressionEvaluator */,
+				926B41A024A35D1F00E1ECB1 /* RiemannSum */,
 				92D39C8C24A4A32F00B2F99C /* InfixToPostfix */,
 				92D603AA24B4905F008FDB72 /* FreeTest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		926B41A224A35D1F00E1ECB1 /* ExpressionEvaluator */ = {
+		926B41A224A35D1F00E1ECB1 /* RiemannSum */ = {
 			isa = PBXGroup;
 			children = (
 				926B41A324A35D1F00E1ECB1 /* main.cpp */,
@@ -161,27 +161,28 @@
 				9208E91724AF78B0002A8B19 /* Utils */,
 				9208E91424AF787C002A8B19 /* StackFloat */,
 				9208E91624AF7890002A8B19 /* StackChar */,
-				92D603A224B1F9AB008FDB72 /* FileRW */,
 				92D603A024B1F397008FDB72 /* makefile */,
+				929CDBA524BDB7C9003D7EED /* Math */,
 			);
-			path = ExpressionEvaluator;
+			path = RiemannSum;
 			sourceTree = "<group>";
 		};
-		92D603A224B1F9AB008FDB72 /* FileRW */ = {
+		929CDBA524BDB7C9003D7EED /* Math */ = {
 			isa = PBXGroup;
 			children = (
-				92D603A324B1F9C9008FDB72 /* FileRW.cpp */,
-				92D603A424B1F9C9008FDB72 /* FileRW.h */,
+				929CDBA324BDB778003D7EED /* Riemann.h */,
+				929CDBA424BDB7C1003D7EED /* Substitution.h */,
+				9248C1F324C41D710099D68B /* SyntaxCheck.h */,
 			);
-			path = FileRW;
+			path = Math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		926B419F24A35D1F00E1ECB1 /* ExpressionEvaluator */ = {
+		926B419F24A35D1F00E1ECB1 /* RiemannSum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 926B41A724A35D2000E1ECB1 /* Build configuration list for PBXNativeTarget "ExpressionEvaluator" */;
+			buildConfigurationList = 926B41A724A35D2000E1ECB1 /* Build configuration list for PBXNativeTarget "RiemannSum" */;
 			buildPhases = (
 				926B419C24A35D1F00E1ECB1 /* Sources */,
 				926B419D24A35D1F00E1ECB1 /* Frameworks */,
@@ -191,9 +192,9 @@
 			);
 			dependencies = (
 			);
-			name = ExpressionEvaluator;
+			name = RiemannSum;
 			productName = ExpressionEvaluator;
-			productReference = 926B41A024A35D1F00E1ECB1 /* ExpressionEvaluator */;
+			productReference = 926B41A024A35D1F00E1ECB1 /* RiemannSum */;
 			productType = "com.apple.product-type.tool";
 		};
 		92D39C8B24A4A32F00B2F99C /* InfixToPostfix */ = {
@@ -250,7 +251,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 926B419B24A35D1F00E1ECB1 /* Build configuration list for PBXProject "ExpressionEvaluator" */;
+			buildConfigurationList = 926B419B24A35D1F00E1ECB1 /* Build configuration list for PBXProject "RiemannSum" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -263,7 +264,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				926B419F24A35D1F00E1ECB1 /* ExpressionEvaluator */,
+				926B419F24A35D1F00E1ECB1 /* RiemannSum */,
 				92D39C8B24A4A32F00B2F99C /* InfixToPostfix */,
 				92D603A924B4905F008FDB72 /* FreeTest */,
 			);
@@ -277,7 +278,6 @@
 			files = (
 				92D39C9524A4A34800B2F99C /* InfixToPostfix.cpp in Sources */,
 				92D603A124B1F397008FDB72 /* makefile in Sources */,
-				92D603A524B1F9C9008FDB72 /* FileRW.cpp in Sources */,
 				926B41A424A35D1F00E1ECB1 /* main.cpp in Sources */,
 				9209D19E24AE17C600F0A370 /* StackFloat.cpp in Sources */,
 				9209D19B24AE157F00F0A370 /* StackChar.cpp in Sources */,
@@ -462,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		926B419B24A35D1F00E1ECB1 /* Build configuration list for PBXProject "ExpressionEvaluator" */ = {
+		926B419B24A35D1F00E1ECB1 /* Build configuration list for PBXProject "RiemannSum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				926B41A524A35D1F00E1ECB1 /* Debug */,
@@ -471,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		926B41A724A35D2000E1ECB1 /* Build configuration list for PBXNativeTarget "ExpressionEvaluator" */ = {
+		926B41A724A35D2000E1ECB1 /* Build configuration list for PBXNativeTarget "RiemannSum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				926B41A824A35D2000E1ECB1 /* Debug */,

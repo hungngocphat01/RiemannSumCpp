@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ExpressionEvaluator.xcodeproj">
+      location = "self:/Users/ngocphat/Documents/Xcode Projects/RiemannSum/RiemannSum.xcodeproj">
    </FileRef>
 </Workspace>

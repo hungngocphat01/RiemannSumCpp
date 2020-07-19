@@ -1,15 +1,15 @@
-# Makefile for ExpressionEvaluator by Hung Ngoc Phat (19120615)
+# Makefile for RiemannSum by Hung Ngoc Phat (19120615)
 
 ifeq ($(OS), Windows_NT)
-	EXECUTABLE := ExprEval.exe
+	EXECUTABLE := RiemannSum.exe
 else
-	EXECUTABLE := ExprEval
+	EXECUTABLE := RiemannSum
 endif
 
 G++ := g++
 
 # Subfolders
-folders := InfixToPostfix PostfixEval StackFloat StackChar Utils FileRW
+folders := InfixToPostfix PostfixEval StackFloat StackChar Utils Math
 
 # Dependencies
 CPP_DEPENDENCIES := $(foreach folder, $(folders), $(wildcard $(folder)/*.cpp))
