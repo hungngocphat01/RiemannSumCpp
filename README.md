@@ -1,8 +1,9 @@
-# Riemann Sum Evaluator (Mid-term)
+# Riemann Sum Evaluator
+My for-fun project to evaluate the middle Riemann Sum with C++.
 
 ## Author
-* Name: Hùng Ngọc Phát
-* Student ID: 19120615
+* Name: ...
+* ID: ...
 * Class: 19CTT4, Ho Chi Minh University of Science.
 
 ## Input parameter
