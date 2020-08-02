@@ -1,11 +1,6 @@
 # Riemann Sum Evaluator
 My for-fun project to evaluate the middle Riemann Sum with C++.
 
-## Author
-* Name: ...
-* ID: ...
-* Class: 19CTT4, Ho Chi Minh University of Science.
-
 ## Input parameter
 * Parameters:
 ```bash
